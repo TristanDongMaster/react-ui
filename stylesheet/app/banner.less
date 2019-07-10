@@ -1,0 +1,38 @@
+.banner{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding-left:0.15rem;
+	text-align:left;
+	font-size:@font-base-24px;
+	align-items: center;
+	height: @banner-height-46px;
+	i{
+		display: block;
+	    height: @font-base-28px;
+	    line-height: @font-base-28px;
+	    font-size: @font-base-28px;
+	    text-align: center;
+	    margin-right: 0.1rem;
+	}
+	&.banner-warn{
+		color:@red-base;
+		background:@yellow-base;
+	}
+	&.banner-info{
+		color:@grey-primary;
+		background:@grey-bg;
+	}
+	&.banner-hide{
+		visibility: hidden;
+	}
+}

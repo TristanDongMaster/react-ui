@@ -1,0 +1,79 @@
+@import "../stylesheet/app/variables";
+@grey-base:              #000;
+@grey-darker:            #222; // #333
+@grey-dark:              #666; // #666
+@grey:                   #ccc; // #999
+@grey-light:             #ddd; // #ddd
+@grey-top:           	 #fff; // #fff
+
+@brand-yellow:          #fffee4;
+@brand-red:          	#f21377;
+@new-line-grey:         #CCCDD0; 
+
+@brand-blue:         	#079fff;
+
+.ipt-container{
+	.ipt-body{
+		.ipt-identify-left{
+			position: absolute;
+			left: 0;
+			right: 1rem;
+			height: 100%;
+		}
+		.ipt-identify-right{
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			width: 1rem;
+			.ipt-identify-line{
+				position: absolute;
+				left: 0;
+				top: 0.05rem;
+				height: 0.4rem;
+				width: 1px;
+				overflow: hidden;
+				background: @grey-light;
+			}
+			button{
+				margin: 0;
+				padding: 0;
+				border: none;
+				font-size: 0.14rem;
+				text-align: center;
+				line-height: 0.4rem;
+				width: 100%;
+				height: 100%;
+				color: @brand-blue;
+				background: @grey-top;
+				-webkit-tap-highlight-color:rgba(0,0,0,0);
+			}
+			.ipt-disabled-mask{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 0;
+			}
+		}
+		.ipt-identify-right-disabled{
+			button{
+				color: @black-primary;
+			}
+			.ipt-disabled-mask{
+				height: 100%;
+			}
+		}
+		
+	}
+}
+.ipt-container-without-title{
+	.ipt-body{
+		left: 0;
+	}
+}
+@media (max-resolution: 1.9dppx) {
+  .ipt-container .ipt-body .ipt-identify-right-disabled button{
+    font-size: 0.12rem;
+  }
+}

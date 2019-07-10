@@ -1,0 +1,172 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+.btn {
+  display: inline-block;
+  padding: 0;
+  margin-bottom: 0; // For input.btn
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+  user-select: none;
+  text-align:center;
+  color:#fff;
+  font-size:0.18rem;
+  border-radius:2px;
+  transition: background 1s;
+  padding: 0 @btn-height-28px;
+  line-height: 1;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  &,
+  &.active {
+    outline: 0;
+    background-image: none;
+  }
+
+  &:hover,
+  &.focus {
+    text-decoration: none;
+    @include tab-focus;
+  }
+
+  &.visited {
+    color: #fff;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    box-shadow:none;
+  }
+
+}
+
+
+
+//size  btn-small btn-mini
+//kind btn-basic btn-border  btn-full
+
+//name btn-red btn-white btn-grey btn-
+
+.btn-basic{
+  background: @pink-base;
+  height: @btn-height-88px;
+  font-size: @font-base-32px;
+
+  &.active ,&:hover,&.focus{
+    background: @btn-color-basic-actived;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    background: @btn-color-basic-disabled;
+    color: @btn-color-basic-disabled-text;
+  }
+}
+.btn-border{
+  background: #fff;
+  color: @btn-color-border;
+  border: 1px solid @btn-color-border;
+  height: @btn-height-72px;
+  font-size: @font-base-28px;
+
+  &.active ,&:hover,&.focus{
+    color: @btn-color-border-actived;
+    border: 1px solid @btn-color-border-actived;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    color: @btn-color-border-disabled;
+    border: 1px solid @btn-color-border-disabled;
+  }
+}
+
+.btn-border-grey{
+  background: #fff;
+  color: @pink-base;
+  border: 1px solid @pink-base;
+
+  &.active ,&:hover,&.focus{
+    color: @pink-base;
+    border: 1px solid @pink-base;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    background:  @btn-color-basic-disabled
+    color: @btn-color-basic-disabled-text;
+    border: 1px solid @btn-color-basic-disabled-text;
+  }
+}
+
+.btn-small{
+  height: @btn-height-60px;
+  font-size: @font-base-24px;
+}
+
+.btn-mini{
+  height: @btn-height-48px;
+  font-size: @font-base-24px;
+}
+
+
+.btn-full{
+  width: 100%;
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+
+
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link {
+  font-weight: normal;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &.active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    box-shadow:none;
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+
+
+
+
+

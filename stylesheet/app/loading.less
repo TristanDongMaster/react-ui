@@ -1,0 +1,78 @@
+.vh5-loading-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 110;
+
+    &.z-hide {
+        visibility: hidden;
+    }
+}
+
+.vh5-loading-inner {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    margin-left: -90px;
+    transform:rotate(-90deg);
+}
+
+.vh5-loading-text {
+    text-anchor:middle;
+    font: 21px/1 Helvetica;
+}
+
+.vh5-loading-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.vh5-loading-bg {
+    position: relative;
+    left: -90px;
+    top: -90px;
+    width: 180px;
+    height: 180px;
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0;
+    box-shadow: 0 0 4px rgba(0,0,0,.1);
+}
+
+.vh5-loading-bg:after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    overflow-y: hidden;
+    vertical-align: middle;
+}
+
+.vh5-loading {
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.vh5-loading-progress{
+
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150.796;
+    animation: loading-anim 2s ease-in infinite;
+}
+
+
+
+@keyframes loading-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+

@@ -1,0 +1,82 @@
+.dialog-overlay {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	z-index: 1001;
+	//transform: translateZ(0);
+    transform: scale(1);
+	opacity: 1;
+	visibility:visible;
+	//ease-in-out cubic-bezier(.31,.57,.68,1.36) cubic-bezier(0.68, -0.55, 0.27, 1.55)
+	transition: opacity 0.3s ,transform .3s cubic-bezier(0.68, -0.65, 0.27, 1.65) ,visibility 0.3s;
+	&.hide{
+		display: block !important;
+		visibility: hidden;
+		opacity: 0;
+		transform: scale(0);
+		transition: visibility 0.3s, opacity 0.3s ,transform .3s cubic-bezier(0.68, -0.65, 0.27, 1.65);
+	}
+	.dialog-container {
+	    position: absolute;
+	    width: 80%;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    background: white;
+	    border-radius: 0.05rem;
+	    box-shadow: 0.05rem 0.05rem 0.05rem @grey-line;
+	}
+	
+	.dialog-content {
+		background: white;
+		position: relative;
+		width: 100%;
+		text-align: left;
+		border-radius: 0.05rem;
+	}
+	.dialog-body {
+		.flex;
+	    flex-direction: column;
+	    justify-content: center;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		max-height: 3rem;
+		color:@black-base;
+		margin: 0;
+		min-height: 0.8rem;
+		font-size: 0.14rem;
+	}
+	.dialog-header {
+		padding-top: 0.2rem;
+		font-weight: bold;
+	    text-align: center;
+	    font-size: 0.16rem;
+	    color: @black-base;
+	}
+	.dialog-action {
+		text-align: center;
+		text-decoration: none;
+		box-sizing: border-box;
+		height: 0.5rem;
+		font-size: 0.16rem;
+		line-height: 0.5rem;
+		color: @blue-primary;
+		border-radius: 0 0 0.05rem 0.05rem;
+	}
+	.dialog-text {
+		text-align: center;
+		padding: 0.18rem;
+	}
+	.dialog-footer{    
+		overflow: hidden;
+		border-radius: 0 0 0.05rem 0.05rem;
+		border-top: 0.01rem solid @grey-line;
+	}
+	.dialog-footer .action-right {
+		border-radius: 0 0 0.05rem 0;
+	    font-weight: bold;
+	    border-left: 0.01rem solid @grey-line;
+	}
+}

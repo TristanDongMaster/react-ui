@@ -1,0 +1,188 @@
+.tabs{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 0.15rem;
+    font-size: @font-base-28px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	.tab-button{
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	    justify-content: center;
+	    flex-direction: column;
+	    text-align: center;
+	    height: @tab-height-68px;
+	    color: @tab-color-basic;
+	    background-color: #fff;
+	    border:1px solid @tab-color-basic;
+	    -webkit-box-flex: 1;
+	    -moz-box-flex: 1;
+	    -webkit-flex: 1;
+	    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	.tab-button-left{
+		-webkit-border-top-left-radius: 4px;
+		-webkit-border-bottom-left-radius: 4px;
+	    -moz-border-radius-topleft: 4px;
+	    -moz-border-radius-bottomleft: 4px;
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+	}
+
+	.tab-button-right{
+		-webkit-border-top-right-radius: 4px;
+		-webkit-border-bottom-right-radius: 4px;
+	    -moz-border-radius-topright: 4px;
+	    -moz-border-radius-bottomright: 4px;
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+	}
+	.tab-button-full{
+		width: 100%;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+	}
+	.tab-button.active, .tab-mini.active{
+		background: @tab-color-active;
+		color: #fff;
+	}
+	.tab-link{
+		position: relative;
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	    justify-content: center;
+	    flex-direction: column;
+	    text-align: center;
+	    height: @tab-height-76px;
+	    color: @tab-link-color-basic;
+	    background-color: #fff;
+	    border:none;
+	    -webkit-box-flex: 1;
+	    -moz-box-flex: 1;
+	    -webkit-flex: 1;
+	    margin: 0 0.15rem;
+	    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	.tab-link::after{
+		position: absolute;
+		content: '';
+		width: 1px;
+		height: 0.2rem;
+		top: 0.1rem;
+		right: -0.15rem;
+		background-color: #E6E9EE;
+	}
+	.tab-link:last-child::after{
+		display: none;
+	}
+	.tab-link-left{
+		margin-left: 0;
+	}
+	.tab-link-right{
+		margin-right: 0;
+	}
+	.tab-link.active{
+		border-bottom: 2px solid @tab-link-color-active;
+		color: @pink-primary;
+	}
+	.tab-mini{
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	    justify-content: center;
+	    flex-direction: column;
+	    text-align: center;
+	    height: @tab-height-58px;
+	    color: @tab-color-basic;
+	    background-color: #fff;
+	    border:1px solid @tab-color-basic;
+	    -webkit-box-flex: 1;
+	    -moz-box-flex: 1;
+	    -webkit-flex: 1;
+	    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+	.tab-mini-left{
+		-webkit-border-top-left-radius: 4px;
+		-webkit-border-bottom-left-radius: 4px;
+	    -moz-border-radius-topleft: 4px;
+	    -moz-border-radius-bottomleft: 4px;
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+		margin-left: 0.69rem;
+	}
+
+	.tab-mini-right{
+		-webkit-border-top-right-radius: 4px;
+		-webkit-border-bottom-right-radius: 4px;
+	    -moz-border-radius-topright: 4px;
+	    -moz-border-radius-bottomright: 4px;
+		border-top-right-radius: 4px;
+		border-bottom-right-radius: 4px;
+		margin-right: 0.69rem;
+	}
+	&.tabs-unlimited{
+		display: block;
+		position: relative;
+		height: 0.38rem;
+		overflow: hidden;
+		.tab-unlimited{
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			align-items: center;
+		    justify-content: flex-start;
+		    position: absolute;
+		    width: 9999rem;
+		    transition: all .3s ease;
+		    -webkit-transition: all ease 0.3s;
+			.tab-unfixed{
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+			    justify-content: center;
+			    flex-direction: column;
+			    text-align: center;
+			    height: @tab-height-76px;
+			    background-color: #fff;
+			    padding: 0.09rem 0;
+			    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			    .tab-item{
+				    color: @tab-link-color-basic;
+				    border-left:1px solid @tab-color-basic;
+				    padding: 0 0.09rem;
+			    }
+			}
+			.tab-unfixed:first-child .tab-item{
+				border-left: none;
+			}
+			.tab-unfixed.active{
+				border-bottom: 2px solid @tab-link-color-active;
+				.tab-item{
+					color: @pink-primary;
+				}
+			}
+		}
+	}
+}
+
+.tab-content{
+	font-size: @font-base-28px;
+}

@@ -1,0 +1,124 @@
+@import "../stylesheet/app/variables";
+.modal{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	min-height:100%;
+	z-index:1;
+	background:@grey-top;
+}
+
+.modal-fullpage{
+	position:fixed;
+	top:0;
+	left:110%;
+	width:100%;
+	height:100%;
+	z-index:100;
+	background:@grey-top;
+	transition: left .3s;
+	transform: translateZ(0);
+
+
+    overflow: hidden;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+	-webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.modal-show{
+	left:0;
+}
+
+.modal-header{
+	left: 0;
+	top: 0;
+	width:100%;
+	.head-search{
+		height: 1.03rem;
+		background-color: @grey-lighter-6;
+		.h2{
+			background-color: @grey-top;
+		}
+	}
+}
+.modal-body{
+	-webkit-overflow-scrolling:touch;
+	background-color: @grey-lighter-6;
+
+	width: 100%;
+	display: block;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+}
+
+.list{
+	width:100%;
+	@include clearfix;
+	.item{
+		width: 100%;
+		padding: 0.15rem;
+		border-bottom: 1px solid @new-line-grey;
+		font-size: 0.15rem;
+		line-height: 0.15rem;
+		color: @grey-darker;
+		background: #fff;
+	}
+	
+	.noborder{
+		border:none;
+	}
+	
+	.active{
+		background: @grey-lighter-2;
+		color: @brand-red;
+	}
+	.touching{
+		background: @touching-bg;
+	}
+}
+.force-repaint{
+	position: absolute; 
+	top: 0px; 
+	left: 0px; 
+	width: 0px; 
+	height: 0px; 
+	font-size: 0px; 
+	opacity: 1;
+}
+.bottom-fixed{
+	left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background: #fff;
+	-webkit-box-shadow: 0 -0.15rem 0.075rem 0 rgba(255, 255, 255, 0.5);
+	-moz-box-shadow:    0 -0.15rem 0.075rem 0 rgba(255, 255, 255, 0.5);
+	box-shadow:         0 -0.15rem 0.075rem 0 rgba(255, 255, 255, 0.5);
+}
+.item.item-bottom-btn{
+	left: 0;
+	bottom: 0;
+	float: left;
+	width: 100%;
+	padding: 0.17rem 0;
+	font-size: 0.17rem;
+	line-height: 0.17rem;
+	text-align: center;
+	color: @grey-darker;
+	background: #fff;
+	border-top: 1px solid @new-line-grey;
+}

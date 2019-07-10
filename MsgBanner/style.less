@@ -1,0 +1,50 @@
+@import "../stylesheet/app/variables";
+
+
+.msg-banner-info{
+	position:fixed;
+	left:0;
+	top:0.5rem;
+	width:100%;
+	font-size: 0.14rem;
+	padding:0.08rem 0.38rem;
+	color: @grey-tip-color;
+	z-index:100;
+}
+
+.msg-banner{
+	position:fixed;
+	left:0;
+	top:0.5rem;
+	width:100%;
+	padding:0.08rem 0.1rem;
+	background:@brand-yellow;
+	color:@brand-red;
+	font-size:0.14rem;
+	z-index:100;
+}
+
+@media screen and (max-width: 320px){
+	.msg-banner{
+		font-size:0.12rem;
+	}
+	.msg-banner-info{
+		font-size: 0.12rem;
+	}
+}
+
+.withoutHeader{
+	.msg-banner-info{
+		top:0;
+	}
+	.msg-banner{
+		top:0;
+	}
+
+}
+
+
+
+
+
+

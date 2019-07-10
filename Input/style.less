@@ -1,0 +1,192 @@
+// @import "../stylesheet/app/variables";
+@import "../stylesheet/app/variables";
+
+@grey-base:              #000;
+@grey-darker:            #222; // #333
+@grey-dark:              #666; // #666
+@grey:                   #ccc; // #999
+@grey-light:             #ddd; // #ddd
+@grey-top:           	 #fff; // #fff
+
+@brand-yellow:          #fffee4;
+@brand-red:          	#f21377;
+@new-line-grey:         #d8d8d8; 
+
+.ipt-wrap{
+	position: relative;
+	width: 100%;
+	height: 0.5rem;
+	font-size: 0.18rem;
+	border-radius: 0.03rem;
+	background: @grey-top;
+	.ipt{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 0.5rem;
+		padding: 0.05rem 0.4rem 0.05rem 0.05rem;
+		border:none;
+		color: @grey-darker;
+		font-size: 0.16rem;
+		transition: background 1s,color 1s;
+		-webkit-tap-highlight-color:rgba(0,0,0,0);
+		-webkit-appearance:none;
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+        -webkit-tap-highlight-color: transparent;
+        -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+        outline: none !important;
+	}
+	::-webkit-input-placeholder {
+	   color: @grey;
+	}
+
+	:-moz-placeholder { 
+	   color: @grey; 
+	}
+
+	::-moz-placeholder {
+	   color: @grey; 
+	}
+
+	:-ms-input-placeholder {  
+	   color: @grey; 
+	}
+	.ipt-close{
+		position: absolute;
+		right: 0.1rem;
+		top: 0;
+		height: 0.5rem;
+		width: 0.2rem;
+		text-align: center;
+		line-height: 0.5rem;
+		color: @grey-light;
+		-webkit-tap-highlight-color:rgba(0,0,0,0);
+	}
+}
+.ipt-error{
+	.ipt{
+		background: @brand-yellow;
+		color: @brand-red;
+	}
+	
+}
+.ipt-password{
+	.ipt{
+		padding-right: 0.8rem;
+	}
+	.ipt-close{
+		right: 0.4rem;
+	}
+	.ipt-see-pass{
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 0.5rem;
+		width: 0.3rem;
+		text-align: center;
+		line-height: 0.55rem;
+		color: @grey-light;
+		font-size: 0.2rem;
+		-webkit-tap-highlight-color:rgba(0,0,0,0);
+		-webkit-appearance:none;
+	}
+	.ipt-see-pass-open{
+		color: @brand-red;
+	}
+}
+.ipt-search{
+	position: relative;
+	margin: 0.115rem 0.15rem;
+	height: 0.3rem;
+	.ipt-wrap{
+		width: 80%;
+		height: 0.3rem;
+		.ipt{
+			font-size: 0.12rem;
+			line-height: 0.3rem;
+			height: 0.3rem;
+			padding-left: 0.3rem;
+			border: 1px solid @new-line-grey;
+			border-radius:0.03rem;
+		}
+		.ipt-close{
+			right: 0.15rem;
+			height: 0.3rem;
+			line-height: 0.35rem;
+		}
+	}
+	i.icon-search{
+		position: absolute;
+		left: 0.1rem;
+		top: 0;
+		line-height: 0.3rem;
+		font-size: 0.12rem;
+	}
+	.btn-search{
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+
+.ipt-container{
+	position: relative;
+	width: 100%;
+	height: 0.5rem;
+	font-size: 0.16rem;
+	background: @grey-top;
+	.ipt-title{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 1rem;
+		height: 100%;
+		text-align: left;
+		line-height: 0.5rem;
+		padding-left: 0.15rem;
+		color: @black-primary;
+	}
+	.ipt-body{
+		position: absolute;
+		left: .8rem;
+		top: 0;
+		right: 0;
+		height: 100%;
+		.label{
+			width: 100%;
+			line-height: 0.5rem;
+			font-size: 0.16rem;
+			color: @grey;
+		}
+		.label-input-like-text{
+			float: left;
+			line-height: 0.5rem;
+			font-size: 0.16rem;
+			color: @grey-darker;
+		}
+		.label-input-like-icon{
+			float: right;
+			line-height: 0.5rem;
+			font-size: 0.16rem;
+			color: @grey;
+			margin-right: 0.1rem;
+		}
+	}
+}
+
+.ipt-container-without-title{
+	.ipt-title{
+		display: none;
+	}
+	.ipt-body{
+		left: 0;
+	}
+}
+
+
+
+
+
+
+

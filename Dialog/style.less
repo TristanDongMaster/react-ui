@@ -1,0 +1,105 @@
+@import "../stylesheet/app/variables";
+@import "../stylesheet/app/mixins/flex";
+.dialog-password{
+	.dialog-container{
+		top: -20% !important;
+	}
+}
+.dialog-overlay {
+	display:flex;
+	align-items: center;
+    justify-content: center;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	z-index: 1001;
+    background: rgba(0,0,0,0.5);
+	visibility:  visible;
+	transition: background 0.5s,visibility 0.5s;
+	&.hidden{
+		display: none;
+	}
+	&.hide{
+		display: flex !important;
+		visibility: hidden;
+		background: rgba(0,0,0,0);
+		transition: visibility 0.5s, background 0.5s;
+	}
+	.dialog-container {
+	    width: 80%;
+	    background: white;
+	    border-radius: 0.05rem;
+	    transform: translate(0,-120px);
+	    opacity: 1;
+	    transition: opacity .5s, transform .5s;// cubic-bezier(.25, 0.8, 0.3, 1.35);
+	    &.animate-hide{
+	    	opacity: 0;
+	    	transform: translate(0,0);
+			transition: opacity .5s, transform .5s;// cubic-bezier(0.3, -0.65, 0.6, .65);
+	    }
+	    .icon-close-pay {
+	    	position: absolute;
+		    padding: 8px;
+		    top: 6px;
+    		left: 6px;
+	    }
+	}
+	
+	.dialog-content {
+		background: white;
+		position: relative;
+		width: 100%;
+		text-align: left;
+		border-radius: 0.05rem;
+	}
+	.dialog-body {
+		.flex;
+	    flex-direction: column;
+	    justify-content: center;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		max-height: 50vh;
+		color:@black-base;
+		margin: 0;
+		min-height: 1rem;
+		font-size: 0.14rem;
+		&.dialog-body-top{
+			justify-content:flex-start;
+		}
+	}
+	.dialog-header {
+		text-align: center;
+	    height: .5rem;
+	    overflow: hidden;
+	    font-size: 0.16rem;
+	    line-height: .5rem;
+	    color: @black-base;
+	}
+	.dialog-action {
+		text-align: center;
+		text-decoration: none;
+		box-sizing: border-box;
+		height: 0.5rem;
+		font-size: 0.16rem;
+		line-height: 0.5rem;
+		color: @blue-primary;
+		border-radius: 0 0 0.05rem 0.05rem;
+	}
+	.dialog-text {
+		text-align: center;
+		padding: 0.18rem;
+		line-height: .18rem;
+	}
+	.dialog-footer{    
+		overflow: hidden;
+		border-radius: 0 0 0.05rem 0.05rem;
+		border-top: 0.01rem solid @grey-line;
+	}
+	.dialog-footer .action-right {
+		border-radius: 0 0 0.05rem 0;
+	    font-weight: bold;
+	    border-left: 0.01rem solid @grey-line;
+	}
+}

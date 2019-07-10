@@ -1,0 +1,115 @@
+@import "../stylesheet/app/variables";
+@import "../stylesheet/app/mixins/flex";
+.half-modal-overlay {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	z-index: 1001;
+	transform: translateZ(0);
+	opacity: 1;
+	visibility: visible;
+	transition: background 0.5s linear;
+	background: rgba(0, 0, 0, 0.6);
+
+	&.hide {
+		display: block !important;
+		visibility: hidden;
+		background: rgba(0, 0, 0, 0);
+		transition: visibility .5s, background .5s linear;
+		z-index: 1000;
+	}
+	.modal-container {
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+		background: white;
+		margin-bottom: 0px;
+		animation: halfToBottom .5s ease-in-out;
+		&.animateHide{
+			margin-bottom: -70vh;
+			animation: halfToTop .5s ease-in-out;
+		}
+	}
+
+	@keyframes halfToTop{
+	    0%{margin-bottom:0px}
+	    100%{margin-bottom:-60vh}
+	}
+
+	@keyframes halfToBottom{
+	    0%{margin-bottom:-70vh}
+	    100%{margin-bottom:0px}
+	}
+
+	.modal-body {
+		background: @grey-bg;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		max-height: 3rem;
+		color: @black-base;
+		margin: 0;
+		min-height: 0.8rem;
+		max-height: 400px;
+		max-height: 50vh;
+		font-size: 0.16rem;
+	}
+
+	.modal-header {
+		text-align: center;
+		font-size: 0.18rem;
+		color: @black-base;
+		.flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.13rem 0.05rem;
+		position: relative;
+	}
+
+	.header-text{
+		position: absolute;
+	    left: 50%;
+	    top: 50%;
+	    transform: translate(-50%,-50%);
+	}
+	.header-close {
+		color: @b-gray-cross;
+		width: 0.2rem;
+		padding: 0 0.1rem;
+		.icon-cross{
+			vertical-align: sub;
+		}
+
+	}
+	.header-icon{
+		min-width: 0.2rem;
+		padding:0 0.1rem;
+		color:@tab-link-color-basic;
+		.more-text{
+			font-size: 0.14rem;
+		}
+		i{
+			vertical-align: sub;
+		}
+	}
+	.sub-title {
+		font-size: 0.12rem;
+		color: @grey-primary;
+		margin-top: 0.04rem;
+	}
+	.title {
+		color: @black-base;
+    	//font-weight: bold;
+	}
+	.modal-text {
+		text-align: center;
+		padding: 0.18rem;
+	}
+	.modal-footer {
+		overflow: hidden;
+		border-top: 0.01rem solid @grey-line;
+		padding: 0.1rem 0.2rem;
+		font-size: 0.12rem;
+	}
+}

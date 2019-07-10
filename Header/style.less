@@ -1,0 +1,73 @@
+@import "../stylesheet/app/variables";
+.header{
+    width: 100%;
+    height: 0.5rem;
+    background: #fff;
+    border-bottom: 1px solid @grey-line;
+    position: relative;
+    text-align: center;
+    line-height: 0.5rem;
+    .header-text-flex{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        line-height: normal;
+    }
+    .sub-header-text{
+        font-size: .1rem !important;
+        color: #98989F;
+        margin-top: .02rem;
+    }
+    .header-text{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        font-size: 0;
+        line-height: 0.49rem;
+        img{
+            max-width: 0.5rem;
+            max-height: 0.49rem;
+            height: 0.24rem;
+            margin-right: 0.08rem;
+            vertical-align: middle;
+        }
+        span{
+            display: inline-block;
+            font-size: 0.17rem;
+            vertical-align: middle;
+        }
+    }
+    .header-opt{
+        position: absolute;
+        height: 100%;
+        width: 0.5rem;
+        top: 0;
+        z-index: 2;
+        span{
+            font-size: .16rem;
+            color: @blue-base;
+        }
+        i{
+            font-size: .21rem;
+        }
+    }
+    .header-left{
+        left: 0;
+        
+    }
+    .header-right{
+        right: 0;
+    }
+    .line-height-6{
+        line-height: 0.6rem;
+    }
+
+    
+}
+
+

@@ -1,0 +1,60 @@
+.onoffswitch {
+    -webkit-user-select:none; 
+    -moz-user-select:none; 
+    -ms-user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative; 
+    width: 0.52rem;
+    height: 0.32rem;
+    outline: 0;
+    box-sizing: border-box;
+    border: 1px solid @switcher-color-border;
+    border-radius: 0.3rem;
+    background-color: @switcher-color-border;
+    -webkit-transition: background-color 0.1s, border 0.1s;
+    transition: background-color 0.1s, border 0.1s;
+}
+.onoffswitch:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.5rem;
+    height: 0.3rem;
+    border-radius: 0.15rem;
+    background-color: @switcher-color-grey;
+    -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+    transition: -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+    transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+    transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1), -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+}
+.onoffswitch:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 0.15rem;
+    background-color: #FFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+    transition: -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+    transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+    transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35), -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+}
+.onoffswitch:checked {
+	border-color: @green-base;
+	background-color: @green-base;
+}
+.onoffswitch:checked:before{
+	-webkit-transform: scale(0);
+	transform: scale(0);
+}
+.onoffswitch:checked:after{
+	-webkit-transform: translateX(0.2rem);
+	transform: translateX(0.2rem);
+}
+

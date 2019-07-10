@@ -1,0 +1,74 @@
+@import "../stylesheet/app/variables";
+
+.onoffswitch {
+    position: relative; 
+    width: 0.6rem;
+    -webkit-user-select:none; 
+    -moz-user-select:none; 
+    -ms-user-select: none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.onoffswitch-checkbox {
+    display: none;
+    &:checked + .onoffswitch-label .onoffswitch-inner {
+	    margin-left: 0;
+	}
+	&:checked + .onoffswitch-label .onoffswitch-switch {
+	    right: 0; 
+	}
+}
+.onoffswitch-label {
+    display: block; 
+    overflow: hidden;
+    border: 1px solid @grey-lighter-3; 
+    border-radius: 0.3rem;
+}
+.onoffswitch-inner {
+    display: block; 
+    width: 200%; 
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+
+    &:before, &:after {
+	    display: block; 
+	    float: left; 
+	    width: 50%; 
+	    height: 0.3rem; 
+	    padding: 0; 
+	    line-height: 0.3rem;
+	    font-size: 14px; 
+	    color: white; 
+	    box-sizing: border-box;
+	    box-shadow: 0 0 1px 1px @grey-lighter;
+	}
+	&:before {
+	    content: "abc";
+	    padding-left: 0.05rem;
+	    background-color: @warm-green; 
+	    color: white;
+	}
+	&:after {
+		font-family: "icomoon";
+	    content: "\EA06\EA06\EA06";
+	    padding-right: 0.05rem;
+	    background-color: white; 
+	    color: @grey;
+	    text-align: right;
+	    font-size: 0.07rem;
+	}
+}
+
+.onoffswitch-switch {
+    display: block; 
+    width: 0.3rem; 
+    margin: 0;
+    background: white;
+    position: absolute; 
+    top: 0; 
+    bottom: 0;
+    right: 0.3rem;
+    border-radius: 0.3rem;
+    transition: all 0.3s ease-in 0s; 
+    box-shadow: 0 0 1px 1px @grey-lighter;
+}
+

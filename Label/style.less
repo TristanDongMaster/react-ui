@@ -1,0 +1,79 @@
+
+@import "../stylesheet/app/variables";
+@label-height:				 0.5rem;
+@label-fontsize:				 0.15rem;
+
+.label-wrap{
+	display: flex;
+	height: @label-height;
+	width: 100%;
+	background: #fff;
+	cursor: pointer;
+	padding: 0 0.15rem;
+	font-size: @label-fontsize;
+	color: @black-base;
+}
+.label-title{
+	display: flex;
+	flex: 0 0 auto;
+	height: 100%;
+	width: 0.5rem;
+	justify-content: flex-start;
+    align-items: center;
+    margin-right: 0.2rem;
+    //color:@black-primary;
+}
+.label-content{
+	display: flex;
+	flex: 1 1 auto;
+	height: 100%;
+	justify-content: flex-start;
+    align-items: center;
+    word-break:break-all;
+    word-wrap:break-word;
+    //color:@black-base;
+    &.content-right{
+    	justify-content: flex-end;
+    }
+}
+.label-icon{
+	display: flex;
+	flex: 0 0 auto;
+	height: 100%;
+	width: 0.3rem;
+	justify-content: flex-end;
+    align-items: center;
+    color: @b-color-icon;
+    font-size: 0.16rem;
+}
+.label-tip{
+	display: flex;
+	flex: 1 1 auto;
+	height: 100%;
+	justify-content: flex-start;
+    align-items: center;
+    color: @b-gray-cross;
+    font-size: 0.16rem;
+    &.content-right{
+    	justify-content: flex-end;
+    }
+}
+
+.label-option{
+	display: flex;
+	flex: 1 1 auto;
+	height: 100%;
+	justify-content: flex-end;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+

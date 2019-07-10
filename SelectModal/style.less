@@ -1,0 +1,105 @@
+@import "../stylesheet/app/variables";
+@import "../stylesheet/app/mixins/flex";
+.select-modal-overlay {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	z-index: 1001;
+	transform: translateZ(0);
+	opacity: 1;
+	visibility: visible;
+	transition: background 0.5s linear;
+	background: rgba(0, 0, 0, 0.6);
+	font-size: 0.14rem;
+
+	&.hide {
+		display: block !important;
+		visibility: hidden;
+		background: rgba(0, 0, 0, 0);
+		transition: visibility .5s, background .5s linear;
+	}
+	.modal-container {
+		position: fixed;
+		width: 100%;
+		left: 0;
+		bottom: 0;
+		margin-bottom: 0px;
+		animation: halfToBottom .5s cubic-bezier(0.68, -0, 0.27, 1);
+		border-radius: 0;
+
+		&.animateHide {
+			//margin-bottom: -300px;
+			margin-bottom: -70vh;
+			animation: halfToTop .5s cubic-bezier(0.68, -0, 0.27, 1);
+		}
+	}
+	@keyframes halfToTop {
+		0% {
+			margin-bottom: 0px
+		}
+		100% {
+			//margin-bottom: -300px;
+			margin-bottom: -60vh
+		}
+	}
+	@keyframes halfToBottom {
+		0% {
+			//margin-bottom: -300px;
+			margin-bottom: -70vh
+		}
+		100% {
+			margin-bottom: 0px
+		}
+	}
+	.modal-body {
+		background-color: transparent;
+		color: @black-base;
+		margin: 0;
+		max-height: 1.83rem;
+		border-radius: 0 ;
+		font-size: .17rem;
+		.modal {
+			color: @blue-base;
+			background: #fff;
+			line-height: 0.5rem;
+			height: 0.5rem;
+			margin-bottom: 0;
+			text-align: center;
+			font-weight: normal;
+			border-bottom: 1px solid #F0F0F0;
+		}
+		&.first-border-radius {
+		}
+		.modal:active{
+			background-color: #eee;
+		}
+	}
+	.modal-header {
+		color: #222;
+		background: #fff;
+		line-height: 0.45rem;
+		height: 0.45rem;
+		margin-bottom: 0;
+		text-align: center;
+		font-weight: normal;
+		font-size: .15rem;
+		border-radius: 0;
+		border-bottom: 1px solid #F0F0F0;
+	}
+	.modal-footer {
+		overflow: hidden;
+		text-align: center;
+		line-height: 0.5rem;
+		height: 0.5rem;
+		font-size: 0.17rem;
+		border-radius: 0;
+		background: white;
+		margin: 0;
+		color: #222;
+	}
+	&:active{
+		background-color: #eee;
+	}
+}

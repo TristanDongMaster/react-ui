@@ -1,0 +1,93 @@
+.select-modal-overlay {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	z-index: 1001;
+	transform: translateZ(0);
+	opacity: 1;
+	visibility: visible;
+	transition: background 0.3s linear;
+	background: rgba(0, 0, 0, 0.6);
+	font-size: 0.14rem;
+
+	&.hide {
+		display: block !important;
+		visibility: hidden;
+		background: rgba(0, 0, 0, 0);
+		transition: visibility .3s, background .3s linear;
+	}
+	.modal-container {
+		position: fixed;
+		width: 80%;
+		left: 10%;
+		bottom: 0;
+		margin-bottom: 0px;
+		animation: halfToBottom .3s cubic-bezier(0.68, -0.35, 0.27, 1.35);
+		border-radius: 0.05rem;
+
+		&.animateHide {
+			margin-bottom: -70vh;
+			animation: halfToTop .3s cubic-bezier(0.68, -0.35, 0.27, 1.35);
+		}
+	}
+	@keyframes halfToTop {
+		0% {
+			margin-bottom: 0px
+		}
+		100% {
+			margin-bottom: -60vh
+		}
+	}
+	@keyframes halfToBottom {
+		0% {
+			margin-bottom: -70vh
+		}
+		100% {
+			margin-bottom: 0px
+		}
+	}
+	.modal-body {
+		background-color: transparent;
+		color: @black-base;
+		margin: 0;
+		max-height: 1.83rem;
+		border-radius: 0 0  0.05rem 0.05rem;
+
+		.modal {
+			color: @blue-base;
+			background: @grey-bg;
+			line-height: 0.5rem;
+			height: 0.6rem;
+			margin-bottom: 0.01rem;
+			text-align: center;
+			font-weight: bold;
+		}
+		&.first-border-radius {
+			border-top-left-radius: 0.05rem;
+			border-top-right-radius: 0.05rem;
+		}
+	}
+	.modal-header {
+		color: @grey-base;
+		background: #F3F4F5;
+		line-height: 0.5rem;
+		height: 0.6rem;
+		margin-bottom: 0.01rem;
+		text-align: center;
+		font-weight: bold;
+		border-radius: 0.05rem 0.05rem 0 0;
+	}
+	.modal-footer {
+		overflow: hidden;
+		text-align: center;
+		line-height: 0.6rem;
+		height: 0.6rem;
+		font-size: 0.16rem;
+		border-radius: 0.05rem;
+		background: white;
+		margin: 0.05rem 0;
+		color: @blue-primary;
+	}
+}

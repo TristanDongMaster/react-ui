@@ -1,0 +1,99 @@
+@import "../stylesheet/app/variables";
+
+.tipsmodal-fullpage{
+	position:fixed;
+	top:0;
+	left:110%;
+	width:100%;
+	height:100%;
+	z-index:100;
+	background:@modal-bg;
+	transition: left .3s;
+	transform: translateZ(0);
+	padding: 0.3rem;
+
+    overflow: hidden;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+	-webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.modal-show{
+	left:0;
+}
+
+.tipsmodal-header{
+	left: 0;
+	top: 0;
+	width:100%;
+	height: 1.7rem;
+	border-bottom: 2px solid @modal-line;
+	-webkit-box-shadow: 0 -2px 0 0 white inset,0 -6px 0 0 @modal-line inset;
+    -moz-box-shadow:    0 -2px 0 0 white inset,0 -6px 0 0 @modal-line inset;
+    box-shadow:         0 -2px 0 0 white inset,0 -6px 0 0 @modal-line inset;
+	.h2{
+		font-size: 0.18rem;
+		line-height: 0.25rem;
+		margin-top: 0.9rem;
+		text-align: center;
+	}
+}
+.tipsmodal-body{
+	-webkit-overflow-scrolling:touch;
+	background-color: @modal-bg;
+	width: 100%;
+	display: block;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+}
+.tipsmodal-body::before{
+	content: "";
+    position: absolute;
+    z-index: 1;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    -webkit-box-shadow: 0 15px 10px rgba(255,255,255,0.9);
+    -moz-box-shadow: 0 15px 10px rgba(255,255,255,0.9);
+    box-shadow: 0 15px 10px rgba(255,255,255,0.9);
+}
+.tipsmodal-bottom-fixed{
+	left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1rem;
+    background: #fff;
+    .item-bottom-btn{
+    	position: absolute;
+		left: 50%;
+		bottom: 0.4rem;
+		margin-left: -0.22rem;
+		float: left;
+		width: 0.44rem;
+		height: 0.34rem;
+		padding-top: 0.1rem;
+		text-align: center;
+		color: @black-base;
+		background: #fff;
+		border: 1px solid @modal-line;
+		border-radius: 50%;
+		[class^="icon-"], [class*=" icon-"]{
+			font-size: 0.12rem;
+			color: @modal-close; 
+		}
+	}
+}

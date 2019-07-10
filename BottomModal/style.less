@@ -1,0 +1,66 @@
+@import "../stylesheet/app/variables";
+.bottom-modal-overlay {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	z-index: 1001;
+	transform: translateZ(0);
+	opacity: 1;
+	visibility: visible;
+	transition: background 0.5s linear;
+	background: rgba(0, 0, 0, 0.6);
+
+	&.hide {
+		display: block !important;
+		visibility: hidden;
+		background: rgba(0, 0, 0, 0);
+		transition: visibility .5s, background .5s linear;
+	}
+	.modal-container {
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+		background: white;
+		margin-bottom: 0px;
+		animation: bottomModalToBottom .5s linear;
+		&.animateHide{
+			margin-bottom: -70vh;
+			animation: bottomModalToTop .5s linear;
+		}
+	}
+
+	@keyframes bottomModalToTop{
+	    0%{margin-bottom:0px}
+	    100%{margin-bottom:-60vh}
+	}
+
+	@keyframes bottomModalToBottom{
+	    0%{margin-bottom:-70vh}
+	    100%{margin-bottom:0px}
+	}
+
+	.modal-body {
+		background-color: #fff;
+		.text{
+			height: .5rem;
+			line-height: .5rem;
+			text-align: center;
+			font-size: .15rem;
+			color: #157EFA;
+			border-top:1px solid  #F0F0F0; 
+		}
+	}
+	
+	.modal-footer {
+		.close{
+			height: .5rem;
+			line-height: .5rem;
+			text-align: center;
+			font-size: .15rem;
+			color: #222222;
+			border-top:1px solid  #F0F0F0; 
+		}
+	}
+}

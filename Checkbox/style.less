@@ -1,0 +1,47 @@
+@import "../stylesheet/app/variables";
+
+.checkbox-item{
+	height: 0.4rem;
+    line-height: 0.4rem;
+    font-size: 0.18rem;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.checkbox{
+	display:inline-block;
+	position:relative;
+	background:#fff;
+	text-align:center;
+	color:#fff;
+	margin-right: 7px;
+}
+.checkbox i{
+	display:inline-block;
+	width:0.18rem;
+	height:0.18rem;
+	line-height:0.18rem;
+	font-size:0.2rem;
+	background:#fff;
+	color: #fff;
+	border:1px solid #cccdd0;
+	border-radius: 3px;
+}
+.checkkbox-default{
+	color:#fff;
+}
+
+.checkkbox-selected i{
+	color:@brand-green;
+	border-color: @brand-green;
+}
+
+.checkkbox-disabled i{
+	background:#f0f0f0;
+	color:#f0f0f0;
+}
+.checkkbox-disabled.checkkbox-selected i{
+	color: #cccdd0;
+	border-color: #cccdd0;
+}
+.checkbox + lable{
+	font-size:0.14rem;
+}

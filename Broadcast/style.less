@@ -1,0 +1,106 @@
+@import "../stylesheet/app/variables";
+@timeoutLg: 20s;
+@timeoutSm: 10s;
+@timeoutMid: 15s;
+@timeDelay: 1s ;
+
+.broadcast-ct {
+	@keyframes broadcastShow{
+	    0%{height:0px}
+	    100%{height:0.32rem}
+	}
+	background-color: @b-gray-bg;
+	height: 0.32rem;
+	line-height: 0.32rem;
+	font-size: 0.12rem;
+	color: @grey-tip-color;
+	position: relative;
+	transform: translateZ(0);
+	overflow: hidden;
+	animation:broadcastShow 1s;
+	&.broadcast-hide{
+		display: none;
+	}
+	.description-icon {
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding-top: 2px;
+		z-index: 999;
+		padding-left: 0.15rem;
+		box-shadow: 0.05rem 0rem 0.05rem @b-gray-bg;
+		background-color: @b-gray-bg;
+		vertical-align: sub;
+		font-size: .16rem;
+	}
+	.icon-broadcast{
+		vertical-align: initial;
+	}
+	.gradient-cover {
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 100;
+		height: 0.3rem;
+		width: 0.6rem;
+		background: -webkit-gradient(linear, left top, right bottom, from(rgba(235, 238, 247, 0)), to(rgba(235, 238, 247, 1)));
+		background: -moz-linear-gradient(linear, left top, right bottom, from(rgba(235, 238, 247, 0)), to(rgba(235, 238, 247, 1)));
+	}
+
+	.description {
+		position: absolute;
+		left:40px;
+		top: 0px;
+		text-align: left;
+		white-space: nowrap; 
+		height: 0.32rem;
+		line-height: 0.32rem;
+		word-spacing:0.2rem;
+		padding-right: 10px;
+		
+	}
+	.description.roll-stop{
+		left: 0.4rem;
+		padding-right: 0;
+	}
+
+	.roll-sm{
+		animation: rollup @timeoutSm linear infinite;
+		animation-delay: @timeDelay;
+	}
+	.roll-mid{
+		animation: rollup @timeoutMid linear infinite;
+		animation-delay: @timeDelay;
+	}
+	.roll-lg{
+		animation: rollup @timeoutLg linear infinite;
+		animation-delay: @timeDelay;
+	}
+}
+
+
+
+
+@media only screen 
+  and (max-device-width: 320px) { 
+	.broadcast-ct {
+		.description{
+			&.rroll-stop{
+				left: 100%;
+				//left: 20px;
+				padding-right: 100%;
+				animation: rollup @timeoutSm linear infinite;
+				animation-delay: @timeDelay;
+			}
+		}
+	}
+}
+
+@keyframes rollup {
+	0% {
+		transform: translate(0%,0);
+	}
+	100% {
+		transform: translate(-100%, 0);
+	}
+}

@@ -1,0 +1,86 @@
+@import "../stylesheet/app/variables";
+
+.ui-radio-group{
+	margin:0;
+	padding: 0.1rem;
+	line-height: 0;
+	border-bottom: 1px solid #CCC;
+  font-size: 0.18rem;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+.ui-radio {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  font-size: 0.18rem;
+  line-height: 0;
+}
+
+.ui-radio +label{
+	font-size: 0.14rem;
+	line-height: 0.14rem;
+	vertical-align: middle;
+}
+
+.ui-radio-normal {
+  vertical-align: text-top;
+}
+
+.ui-radio-simulation {
+  display: none;
+  cursor: pointer;
+}
+
+:root .ui-radio-normal {
+  display: none;
+}
+
+:root .ui-radio-normal:checked + .ui-radio-simulation {
+  color: @brand-green;
+}
+
+:root .ui-radio-normal[disabled] + .ui-radio-simulation {
+  cursor: not-allowed;
+  background:@grey-light;
+  color:#CCC;
+  border-radius: 50%;
+}
+
+:root .ui-radio-normal:checked[disabled] + .ui-radio-simulation {
+  cursor: not-allowed;
+  background:@grey-light;
+  color:#CCC;
+  border-radius: 50%;
+}
+
+:root .ui-radio-simulation {
+  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #CCC;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2) {
+  :root .ui-radio-normal:checked + .ui-radio-simulation {
+     color: @brand-green;
+  }
+
+  :root .ui-radio-normal[disabled] + .ui-radio-simulation {
+    background:@grey-light;
+  	color:#CCC;
+    border-radius: 50%;
+  }
+
+  :root .ui-radio-normal:checked[disabled] + .ui-radio-simulation {
+    background:@grey-light;
+  	color:#CCC;
+    border-radius: 50%;
+  }
+
+  :root .ui-radio-simulation {
+    color: #CCC;
+  }
+}
